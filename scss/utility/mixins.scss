@@ -1,0 +1,29 @@
+@mixin font($title, $path, $fw: normal, $fs: normal) {
+	font-family: $title;
+	src: url('#{$path}.eot');
+	src: url('#{$path}.eot?#iefix') format('embedded-opentype'),
+	     url('#{$path}.woff2') format('woff2'),
+	     url('#{$path}.woff') format('woff'),
+	     url('#{$path}.ttf') format('truetype'),
+	     url('#{$path}.svg##{$title}') format('svg');
+	font-weight: $fw;
+	font-style: $fs;
+}
+
+@mixin fw($fs, $fw) {
+	font-size: $fs;
+	font-weight: $fw;
+}
+
+@mixin abs($left: auto, $top: auto, $right: auto, $bottom: auto) {
+	position: absolute;
+	left: $left;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+}
+
+@mixin size($width, $heigth: $width) {
+	width: $width;
+	height: $heigth;
+}

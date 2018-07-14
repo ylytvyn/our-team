@@ -1,0 +1,65 @@
+.slider {
+	margin: 50px 0 100px;
+
+	&__img-wrapper {
+		padding: 90px 0;
+	}
+
+	&__img {
+		margin: -15px;
+		padding: 15px;
+		border: 1px solid $orange;
+		position: relative;
+
+		&::after,
+		&::before {
+			content: '';
+		  	background: #fff;
+		    z-index: 0;
+		}
+
+		&::before {
+			@include abs(25%, -2px, 25%, -2px);
+		}
+
+		&::after {
+			@include abs(-2px, 25%, -2px, 25%);
+		}
+
+		img {
+			display: block;
+			border: inherit;
+			position: relative;
+			z-index: 1;
+			//width: 100%;
+			//border: 1px solid $orange;
+		}
+	}
+
+	&__divider {
+		@include size(1px, 100%);
+		background: $orange;
+		margin: 0 auto;
+	}
+
+	&__pagination {
+		text-align: center;
+		margin-top: 40px;
+	}
+
+	&__pagination-item {
+		@include size(15px);
+		border-radius: 50%;
+		display: inline-block;
+		background: $orange;
+		border: 1px solid #fff;
+		cursor: pointer;
+		margin: 0 5px;
+	}
+
+	&__pagination-item--active,
+	&__pagination-item:hover {
+		background: #fff;
+		border-color: $orange;
+	}
+}

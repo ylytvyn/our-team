@@ -1,0 +1,40 @@
+.header {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0 70px 40px;
+	display: inline-block;
+	position: relative;
+
+	&__subtitle {
+		@include fw(18px, 500);
+		color: lighten($grey, 20%);
+	}
+
+	&__title {
+		font: 900 60px $roboto;
+		color: $orange;
+	}
+
+	&::before {
+		@include abs(0, $bottom: 0);
+		@include size(100%, 1px);
+		content: '';
+		background: $orange;
+	}
+
+	&::after {
+		@include abs(calc(50% - 10px), $bottom: -10px);
+		@include size(20px);
+		content: '';
+		background: #fff url(../images/title.svg) no-repeat center;
+	}
+
+	&-wrapper {
+		text-align: center;
+		margin-top: 100px;
+	}
+}
+
+.fd {
+	font: 20px $opensans;
+}
